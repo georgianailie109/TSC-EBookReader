@@ -3,6 +3,7 @@
 OpenBook este un dispozitiv avansat construit in jurul microcontrolerului ESP32-C6, avand mai multi senzori si interfete. Acest dispozitiv este conceput pentru a oferi o experienta de citire electronica eficienta, cu un consum redus de energie si multiple functionalitati.
 
 2. Diagrama bloc
+   ```
            +------------------+
            |     Baterie       |
            +--------+---------+
@@ -22,6 +23,7 @@ OpenBook este un dispozitiv avansat construit in jurul microcontrolerului ESP32-
     +--------------+-------------------+-------------------+
     |              |                   |                   |
     v              v                   v                   v
+```
 +--------+   +-------------+   +----------------+   +-----------------+
 | ESP32  |<->|    Display   |<->|    BME688      |<->|  Butoane tactile |
 |  -C6   |   |   (SPI: 4W)  |   |   (I2C Bus)    |   | (GPIO + RC)      |
@@ -36,8 +38,9 @@ OpenBook este un dispozitiv avansat construit in jurul microcontrolerului ESP32-
 | (Date USB ↔ ESP32 USB)    |
 | (Protectie ESD & Terminare)|
 +---------------------------+
+```
    
-3. BOM (Bill of Materials)
+4. BOM (Bill of Materials)
 Lista de materiale (BOM)
 Componenta	Link achizitionare	Link Datasheet
 112A-TAAR-R03 ATTEND	https://store.comet.srl.ro/Catalogue/Product/43497/	https://www.snapeda.com/parts/112A-TAAR-R03/Attend/datasheet/
@@ -65,13 +68,13 @@ W25Q512JVEIQ	]https://www.snapeda.com/parts/W25Q512JVEIQ/Winbond+Electronics/vie
 XC6220A331MR-G	https://componentsearchengine.com/part-view/XC6220A331MR-G/Torex	https://product.torexsemi.com/system/files/series/xc6220.pdf
 744043680 BOBINA	https://ro.mouser.com/ProductDetail/Wurth-Elektronik/744043680?qs=PGXP4M47uW6VkZq%252BkzjrHA%3D%3D	https://www.we-online.com/components/products/datasheet/744043680.pdf
    
-4. Functionalitatea hardware
+5. Functionalitatea hardware
 ESP32-C6 reprezinta componenta principala a proiectului OpenBook, oferind conectivitate Wi-Fi 6 si Bluetooth 5.0 LE. Datorita conectivitatii wireless integrate si a numarului mare de pini GPIO, microcontrollerul permite interfatarea cu diverse componente periferice, asigurand flexibilitate si performanta ridicata.
 Afisajul e-paper este conectat la ESP32-C6 prin interfata SPI si utilizeaza driver-ul BD5229G-TR pentru a gestiona tensiunile necesare functionarii. Alimentarea afisajului este controlata prin MOSFET-uri, permitand oprirea completa a acestuia atunci cand nu este utilizat, ceea ce contribuie la eficienta energetica a dispozitivului.
 Pentru monitorizarea conditiilor de mediu, proiectul utilizeaza senzorul BME688, capabil sa masoare temperatura, umiditatea, presiunea si calitatea aerului (VOC). Acesta comunica cu ESP32-C6 prin intermediul interfetei I2C si functioneaza la o tensiune de 3.3V, oferind date precise.
 Gestionarea energiei este realizata printr-un circuit de incarcare bazat pe MCP73831, care permite incarcarea bateriei cu un curent de pana la 500mA. Starea bateriei este monitorizata cu modulul MAX17048G+T10, care comunica prin aceeasi interfata I2C si furnizeaza informatii detaliate despre nivelul de incarcare si starea bateriei.
 
-5. Alocarea pinilor ESP32-C6
+6. Alocarea pinilor ESP32-C6
 Componenta	Pini ESP32	Interfata	Observatii
 Afisaj E-Paper	IO12, IO11, IO5, IO4	SPI	Control si resetare afisaj
 Senzor BME688	IO8, IO10	I2C	Date de mediu (temperatura, umiditate)
@@ -79,7 +82,7 @@ Card SD	IO7	SPI	Stocare externa
 Modul RTC	IO8, IO10	I2C	Ceas in timp real, partajeaza I2C
 Serial USB	IO16, IO17	UART	Programare si depanare
 
-6. Informatii suplimentare relevante
+7. Informatii suplimentare relevante
 TP-urile au fost plasate in mod optim langa marginile placii si in apropierea componentelor esentiale pentru a permite acces facil la depanare si testare.
 Pentru diodele montate pe suprafata, dimensiunea initiala a pad-urilor era prea mica, ceea ce putea crea probleme la lipire. Dimensiunea a fost ajustata pentru a asigura o conexiune electrica fiabila si o asamblare mai usoara.
 Rutarea traseelor a fost realizata pe ambele straturi ale PCB-ului (superior si inferior), asigurand o distributie eficienta a semnalelor si a alimentarii. Planul de masa (GND) a fost aplicat pe ambele straturi pentru a optimiza performanta electrica.
