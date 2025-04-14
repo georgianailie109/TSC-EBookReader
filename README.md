@@ -115,16 +115,7 @@ Cateva imagini din proiect (plasate in folderul `Images/`):
 
 ---
 
-## 7. Informatii suplimentare relevante
-
-- TP-urile au fost plasate in mod optim langa marginile placii si in apropierea componentelor esentiale pentru a permite acces facil la depanare si testare.
-- Pentru diodele montate pe suprafata, dimensiunea initiala a pad-urilor era prea mica, ceea ce putea crea probleme la lipire. Dimensiunea a fost ajustata pentru a asigura o conexiune electrica fiabila si o asamblare mai usoara.
-- Rutarea traseelor a fost realizata pe ambele straturi ale PCB-ului (superior si inferior), asigurand o distributie eficienta a semnalelor si a alimentarii.
-- Planul de masa (GND) a fost aplicat pe ambele straturi pentru a optimiza performanta electrica.
-
----
-
-## 8. Pasi de implementare
+## 7. Pasi de implementare
 
 Proiectarea schemei electrice si conectarea componentelor la ESP32-C6
 Realizarea layout-ului 2D si pozitionarea componentelor pe PCB
@@ -134,5 +125,14 @@ Aplicarea regulilor pentru latimea traseelor si clearance
 Pozitionarea strategica a conectorilor (ex: Qwiic, USB-C)
 Adaugarea pad-urilor de test pentru depanare
 Generarea modelului 3D si verificarea compatibilitatii mecanice
+
+---
+
+## 8. Informatii suplimentare relevante
+
+- TP-urile au fost plasate in mod optim langa marginile placii si in apropierea componentelor esentiale pentru a permite acces facil la depanare si testare.
+- Pentru diodele montate pe suprafata, dimensiunea initiala a pad-urilor era prea mica, ceea ce putea crea probleme la lipire. Dimensiunea a fost ajustata pentru a asigura o conexiune electrica fiabila si o asamblare mai usoara.
+- Rutarea traseelor a fost realizata pe ambele straturi ale PCB-ului (superior si inferior), asigurand o distributie eficienta a semnalelor si a alimentarii.
+- Planul de masa (GND) a fost aplicat pe ambele straturi pentru a optimiza performanta electrica.
 
 ---
